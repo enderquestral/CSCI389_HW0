@@ -46,7 +46,9 @@ Note: I set data_t initially to float in this run.
 --------------------------------
 PART 3:
 Observation time!
+
 After running each doubling 10 times with each of the data types, from what I could tell there wasn't much a notable difference in running time. However, there was a difference in running time: int8_t <= int16_t <= int32_t <= int64_t < float < double. I suspect that this was because the int-types are signed, and also have a lower variance due to the fact that their numbers are restricted with number of bits. In contrast, floats and doubles could both be unsigned, meaning there is a higher range of possibilities to calculate/generate. I made two(sing gnuplot could only handle 3 files) graphs comparing the various CPP iterations, and by the end double seems to take longer. If you want to see graphical representation of how the values compare, please see CPPcomparison1.png and CPPcomparison2.png (Note: this was before I used -O3 in my compile time, so all versions should be notably slower, though in my experimentation the end observation stayed the same. )
+
 ---------------------------------
 PART 4:
 Figure out and describe a way to measure how much memory each of your benchmarks uses while running with 2^20 objects (can be approximate). Compare and contrast the performance and memory consumption of both versions.
